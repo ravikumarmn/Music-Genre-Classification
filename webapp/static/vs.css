@@ -1,0 +1,14 @@
+ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+  }
+  li a.active {
+    background-color: #04AA6D;
+  }
+  

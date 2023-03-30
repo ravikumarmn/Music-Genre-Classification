@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Audio Genre Classification</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+
+</head>
+<body>
+    <style>
+.container {
+  position: relative;
+  height: 50px;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+</style>
+
+    <div class="container">
+        <div class="vertical-center">
+            <ul>
+                <li><a class="active" href="{{url_for('visualize')}}">Results</a></li>
+              </ul>
+        </div>
+
+    </div>
+
+
+<div class="container">
+    <h1 class="text-center my-5">Audio Genre Classification</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data" action="{{ url_for('predict') }}">
+                <div class="form-group mb-4">
+                    <label for="audio-file" class="form-label h5">Select an audio file:</label>
+                    <input type="file" class="form-control" id="audio-file" name="file" accept=".wav,.mp3" required>
+                </div>
+                <div class="text-center">
+                    <button style="display: block; margin: 0 auto;" type="submit" class="btn btn-primary btn-lg">Classify</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% if prediction %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">Predicted genre: {{ prediction }}</h2>
+            <div class="text-center">
+                <img src="data:image/png;base64,{{ image_data }}" alt="Mel-Spectrogram Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Uj1mZN5FUEW+8tZI2tZfHPtYv2Pf/Zn9nC7VJlzkxYl7VWp8E/Iy7z4q+rJMDrxJ"
+        crossorigin="anonymous"></script>
+</body>
+</html>

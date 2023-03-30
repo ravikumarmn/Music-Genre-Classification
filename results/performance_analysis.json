@@ -1,0 +1,1 @@
+{"SVM": {"accuracy": 0.405, "precision": 0.44, "recall": 0.405, "f_score": 0.403}, "RANDOM_FOREST": {"accuracy": 0.39, "precision": 0.406, "recall": 0.39, "f_score": 0.388}, "CNN": {"accuracy": 0.533, "precision": 0.567, "recall": 0.533, "f_score": 0.516}}

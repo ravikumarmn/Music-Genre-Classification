@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vs.css') }}">
+  </head>
+  <body>
+    <div class="container">
+        <ul>
+            <li><a class="active" href="{{url_for('home')}}">Home</a></li>
+          </ul>
+    </div>
+
+
+    <div class="container">
+        <div class="image">
+            <img src="{{url_for('static', filename='cnn_confustion_matrix.png')}}" alt="Image 2" />
+            <div class="caption">CNN Confustion Matrix</div>
+        </div>
+        <div class="image">
+            <img src="{{url_for('static', filename='random_forest_confustion.png')}}" alt="Image 3" />
+            <div class="caption">Random Forest Confustion Matrix</div>
+        </div>
+        <div class="image">
+            <img src="{{url_for('static', filename='svm_confustion.png')}}" alt="Image 4" />
+            <div class="caption">SVM Confustion Matrix</div>
+        </div>
+            
+        <div class="losses">
+            <img src="{{url_for('static', filename='cnn_losses.png')}}" alt="CNN Training and Validation Loss Plot" />
+            <!-- <div class="caption">CNN Training and Validation Loss Plot</div> -->
+        </div>
+        <div class="accuracy">
+            <img src="{{url_for('static', filename='cnn_accuracy.png')}}" alt="CNN Training and Validation Accuracy Plot" />
+            <!-- <div class="caption">CNN Training and Validation Accuracy Plot</div> -->
+        </div>
+        <div class="performance_image">
+            <img src="{{url_for('static', filename='model_performance_analysis.png')}}" alt="Model Performance Analysis" />
+            <!-- <div class="caption">Model Performance Analysis</div> -->
+        </div>
+    </div>
+    
+
+
+
+  </body>
+</html>
+
