@@ -9,3 +9,7 @@ To install dependency run the following commands in the terminal.
 After sucussfully install all the requirements.
 
     Run webapp/app.py file to start the web server. 
+
+<p align="center">
+  <img src="music_genre_home_page.png" width="350" title="hover text">
+</p>
