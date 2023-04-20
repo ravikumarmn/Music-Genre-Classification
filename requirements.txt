@@ -9,3 +9,7 @@ zipp==3.15.0
 celery
 gunicorn
 kaleido
+librosa
+torchaudio
+Flask-Caching
+torchvision
